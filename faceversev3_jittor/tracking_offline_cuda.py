@@ -229,7 +229,7 @@ if __name__ == '__main__':
         os.makedirs(os.path.join(args.res_folder, 'render'), exist_ok=True)
         os.makedirs(os.path.join(args.res_folder, 'back'), exist_ok=True)
         import onnxruntime as ort
-        sess = ort.InferenceSession(onnx_model_path)
+        sess = ort.InferenceSession("/content/drive/MyDrive/StyleAvatar/rvm_1024_1024_32.onnx")
     fourcc = cv2.VideoWriter_fourcc(*'MP4V')
     if args.save_for_styleavatar:
         tar_video = cv2.VideoWriter(os.path.join(args.res_folder, 'track.mp4'), fourcc, tracking.offreader.fps, (args.tar_size * 3, args.tar_size))
